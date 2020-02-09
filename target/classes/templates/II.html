@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xmnls="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -26,42 +25,63 @@
                                th:value="${session.user.xh}">
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <label for="xm" class="col-sm-2 col-form-label">姓名</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="xm" value="xm" th:value="${session.user.xm}>
+                        <input type="text" readonly class="form-control-plaintext" id="xm" value="xm"
+                               th:value="${session.user.xm}">
+                    </div>
+                </div>
+
+                <div class=" form-group row">
+                    <label for="nl" class="col-sm-2 col-form-label">年龄</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control-plaintext" id="nl" value="nl"
+                               th:value="${session.user.nl}" readonly>
                     </div>
                 </div>
                 <div class=" form-group row">
-                        <label for="nl" class="col-sm-2 col-form-label">年龄</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="nl" value="nl" th:value="${session.user.nl}>
-                        </div>
+                    <label for="xb" class="col-sm-2 col-form-label">性别</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control-plaintext" id="xb" value="xb"
+                               th:value="${session.user.xb}" readonly>
+                    </div>
                 </div>
-
-                        <div class=" form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="xb" id="inlineRadio1" value="男"
-                                   readonly
-                                   checked>
-                            <label class="form-check-label" for="inlineRadio1">男</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="xb" id="inlineRadio2" value="女"
-                                   readonly
-                                   th:checked="${session.user.xb=='女'}? true : false">
-                            <label class="form-check-label" for="inlineRadio2">女</label>
-                        </div>
-
-                        <!--系别-->
-                        <div class="form-group col-md-4">
-                            <label for="inputState">系别</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
-                        </div>
-
-                        <button type="button" class="btn btn-success">修改</button>
+<!--                性别-->
+                <!--
+                性别：
+                <div class=" form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="xb" id="inlineRadio1" value="男"
+                           readonly
+                           checked>
+                    <label class="form-check-label" for="inlineRadio1">男</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="xb" id="inlineRadio2" value="女"
+                           disabled="true"
+                           th:checked="${session.user.xb=='女'}? true : false">
+                    <label class="form-check-label" for="inlineRadio2">女</label>
+                </div>
+-->
+                <!--系别-->
+                <div class=" form-group row">
+                    <label for="dep" class="col-sm-2 col-form-label">系别</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control-plaintext" id="dep" value="deo"
+                               th:value="${session.user.dep.getDname()}" disabled="true">
+                    </div>
+                </div>
+                <!--
+                <div class="form-group col-md-4">
+                    <label for="inputState">系别</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                -->
+                <button type="button" class="btn btn-success">修改</button>
             </form>
         </main>
     </div>
